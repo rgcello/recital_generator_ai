@@ -1,0 +1,420 @@
+[
+  {
+    "book": 0,
+    "pieces": [
+      {
+        "title": "Up Like A Rocket",
+        "composer": "",
+        "index": "0.0001"
+      },
+      {
+        "title": "I'm a Little Monkey",
+        "composer": "",
+        "index": "0.0002"
+      },
+      {
+        "title": "D-A-D Song",
+        "composer": "Folk Song",
+        "index": "0.0003"
+      }
+    ]
+  },
+  {
+    "book": 1,
+    "pieces": [
+      {
+        "title": "Twinkle, Twinkle, Little Star Variations",
+        "composer": "S. Suzuki",
+        "index": "1.0001",
+        "movements": [
+          "Variation A",
+          "Variation B",
+          "Variation C",
+          "Variation D",
+          "Theme"
+        ]
+      },
+      {
+        "title": "French Folk Song",
+        "composer": "Folk Song",
+        "index": "1.0002"
+      },
+      {
+        "title": "Lightly Row",
+        "composer": "Folk Song",
+        "index": "1.0003"
+      },
+      {
+        "title": "Song of the Wind",
+        "composer": "Folk Song",
+        "index": "1.0004"
+      },
+      {
+        "title": "Go Tell Aunt Rhody",
+        "composer": "Folk Song",
+        "index": "1.0005"
+      },
+      {
+        "title": "O Come, Little Children",
+        "composer": "Folk Song",
+        "index": "1.0006"
+      },
+      {
+        "title": "May Song",
+        "composer": "Folk Song",
+        "index": "1.0007"
+      },
+      {
+        "title": "Allegro",
+        "composer": "S. Suzuki",
+        "index": "1.0008"
+      },
+      {
+        "title": "Perpetual Motion in D Major",
+        "composer": "S. Suzuki",
+        "index": "1.0009"
+      },
+      {
+        "title": "Perpetual Motion in G Major",
+        "composer": "S. Suzuki",
+        "index": "1.0010"
+      },
+      {
+        "title": "Long, Long Ago",
+        "composer": "T. Bayly",
+        "index": "1.0011"
+      },
+      {
+        "title": "Allegretto",
+        "composer": "S. Suzuki",
+        "index": "1.0012"
+      },
+      {
+        "title": "Andantino",
+        "composer": "S. Suzuki",
+        "index": "1.0013"
+      },
+      {
+        "title": "Rigadoon",
+        "composer": "H. Purcell",
+        "index": "1.0014"
+      },
+      {
+        "title": "Etude",
+        "composer": "S. Suzuki",
+        "index": "1.0015"
+      },
+      {
+        "title": "The Happy Farmer from Album for the Young, Op. 68, No. 10",
+        "composer": "R. Schumann",
+        "index": "1.0016"
+      },
+      {
+        "title": "Minuet in C, No. 11 in G Major, BWV 841",
+        "composer": "J. S. Bach",
+        "index": "1.0017"
+      },
+      {
+        "title": "Minuet No. 2 in G Major, BWV 116",
+        "composer": "J. S. Bach",
+        "index": "1.0018"
+      }
+    ]
+  },
+  {
+    "book": 2,
+    "pieces": [
+      {
+        "title": "Long, Long Ago",
+        "composer": "T. Bayly",
+        "index": "2.0001"
+      },
+      {
+        "title": "May Time, Komm Lieber Mai from Sehnsucht nach dem Frühlinge, K. 96",
+        "composer": "W. A. Mozart",
+        "index": "2.0002"
+      },
+      {
+        "title": "Minuet No. 1, Minuett III from Suite in G Minor for Klavier, BWV 822",
+        "composer": "J. S. Bach",
+        "index": "2.0003"
+      },
+      {
+        "title": "Minuet No. 3 in C Major, BWV Anh. II",
+        "composer": "J. S. Bach",
+        "index": "2.0004"
+      },
+      {
+        "title": "Chorus from Judas Maccabaeus",
+        "composer": "G. F. Handel",
+        "index": "2.0005"
+      },
+      {
+        "title": "Hunters' Chorus from Der Freischütz",
+        "composer": "C. M. von Weber",
+        "index": "2.0006"
+      },
+      {
+        "title": "Musette in G from English Suite III, BWV 808",
+        "composer": "J. S. Bach",
+        "index": "2.0007"
+      },
+      {
+        "title": "March in G",
+        "composer": "J. S. Bach",
+        "index": "2.0008"
+      },
+      {
+        "title": "Theme from Witches' Dance",
+        "composer": "N. Paganini",
+        "index": "2.0009"
+      },
+      {
+        "title": "Tonalization: The Moon over the Ruined Castle",
+        "composer": "R. Taki",
+        "index": "2.0010"
+      },
+      {
+        "title": "The Two Grenadiers, Op. 49, No. 1",
+        "composer": "R. Schumann",
+        "index": "2.0011"
+      },
+      {
+        "title": "Gavotte",
+        "composer": "F. J. Gossec",
+        "index": "2.0012"
+      },
+      {
+        "title": "Bourrée from Sonata in F Major for Oboe and Basso Continuo",
+        "composer": "G. F. Handel",
+        "index": "2.0013"
+      }
+    ]
+  },
+  {
+    "book": 3,
+    "pieces": [
+      {
+        "title": "Berceuse, Wiegenlied, Op. 98, No. 2",
+        "composer": "F. Schubert",
+        "index": "3.0001"
+      },
+      {
+        "title": "Tonalization: The Moon over the Ruined Castle",
+        "composer": "R. Taki",
+        "index": "3.0002"
+      },
+      {
+        "title": "Gavotte",
+        "composer": "J. B. Lully",
+        "index": "3.0003"
+      },
+      {
+        "title": "Minuet from Sei Quintetti per Archi, Op. 11, No. 5",
+        "composer": "L. Boccherini",
+        "index": "3.0004"
+      },
+      {
+        "title": "Scherzo",
+        "composer": "C. Webster",
+        "index": "3.0005"
+      },
+      {
+        "title": "Minuet in G, WoO 10, No. 7",
+        "composer": "L. van Beethoven",
+        "index": "3.0006"
+      },
+      {
+        "title": "Gavotte in C Minor, Gavotte en Rondeau from BWV 822",
+        "composer": "J. S. Bach",
+        "index": "3.0007"
+      },
+      {
+        "title": "Minuet No. 3, BWV Anh. II 114/III 183/II 115",
+        "composer": "J. S. Bach",
+        "index": "3.0008"
+      },
+      {
+        "title": "Humoresque, Op. 101, No. 7",
+        "composer": "A. Dvořák",
+        "index": "3.0009"
+      },
+      {
+        "title": "La Cinquantaine",
+        "composer": "J. Gabriel-Marie",
+        "index": "3.0010"
+      },
+      {
+        "title": "Allegro Moderato from Sonata No. 1 in G Major, BWV 1027",
+        "composer": "J. S. Bach",
+        "index": "3.0011"
+      }
+    ]
+  },
+  {
+    "book": 4,
+    "pieces": [
+      {
+        "title": "Sonata in C Major, Op. 40, No. 1",
+        "composer": "J. B. Bréval",
+        "movements": ["I. Allegro", "II. Rondo grazioso"],
+        "index": "4.0001"
+      },
+      {
+        "title": "Sonata in E Minor, Op. 1, No. 2",
+        "composer": "B. Marcello",
+        "movements": ["I. Adagio", "II. Allegro"],
+        "index": "4.0002"
+      },
+      {
+        "title": "Minuets from Suite in G Major, BWV 1007",
+        "composer": "J. S. Bach",
+        "index": "4.0003"
+      },
+      {
+        "title": "Tonalization",
+        "composer": "",
+        "index": "4.0004"
+      },
+      {
+        "title": "Chanson Triste, Op. 40, No. 2",
+        "composer": "P. I. Tchaikovsky",
+        "index": "4.0005"
+      }
+    ]
+  },
+  {
+    "book": 5,
+    "pieces": [
+      {
+        "title": "Sonata in E Minor, Op. 14, No. 5",
+        "composer": "A. Vivaldi",
+        "movements": ["I. Largo", "II. Allegro", "III. Largo", "IV. Allegro"],
+        "index": "5.0001"
+      },
+      {
+        "title": "Danse Rustique, Op. 20, No. 5",
+        "composer": "W. H. Squire",
+        "index": "5.0002"
+      },
+      {
+        "title": "Arioso from Cantata 156",
+        "composer": "J. S. Bach",
+        "index": "5.0003"
+      },
+      {
+        "title": "Rondo from Concerto No. 4, Op. 65",
+        "composer": "G. Goltermann",
+        "index": "5.0004"
+      }
+    ]
+  },
+  {
+    "book": 6,
+    "pieces": [
+      {
+        "title": "The Swan from Carnival of the Animals",
+        "composer": "C. Saint-Saëns",
+        "index": "6.0001"
+      },
+      {
+        "title": "Allegro from Concerto in D Major, Op. 3, No. 9",
+        "composer": "A. Vivaldi",
+        "index": "6.0002"
+      },
+      {
+        "title": "Tarantella, Op. 23",
+        "composer": "W. H. Squire",
+        "index": "6.0003"
+      },
+      {
+        "title": "Rondo from Concerto No. 2 in D Major",
+        "composer": "J. B. Bréval",
+        "index": "6.0004"
+      },
+      {
+        "title": "Allegro from Concerto in G Minor for Two Cellos, RV 531",
+        "composer": "A. Vivaldi",
+        "index": "6.0005"
+      }
+    ]
+  },
+  {
+    "book": 7,
+    "pieces": [
+      {
+        "title": "Sonata in G Minor",
+        "composer": "H. Eccles",
+        "movements": ["I. Largo", "II. Allegro"],
+        "index": "7.0001"
+      },
+      {
+        "title": "Bourrées from Suite in C Major, BWV 1009",
+        "composer": "J. S. Bach",
+        "index": "7.0002"
+      },
+      {
+        "title": "Gavotte, Op. 23, No. 2",
+        "composer": "D. Popper",
+        "index": "7.0003"
+      },
+      {
+        "title": "Sicilienne",
+        "composer": "M. T. von Paradis",
+        "index": "7.0004"
+      }
+    ]
+  },
+  {
+    "book": 8,
+    "pieces": [
+      {
+        "title": "Sonata in G Major",
+        "composer": "G. B. Sammartini",
+        "movements": ["I. Allegro", "II. Grave", "III. Vivace"],
+        "index": "8.0001"
+      },
+      {
+        "title": "Allegro Appassionato, Op. 43",
+        "composer": "C. Saint-Saëns",
+        "index": "8.0002"
+      },
+      {
+        "title": "Élégie, Op. 24",
+        "composer": "G. Fauré",
+        "index": "8.0003"
+      },
+      {
+        "title": "Scherzo, Op. 12",
+        "composer": "D. van Goens",
+        "index": "8.0004"
+      }
+    ]
+  },
+  {
+    "book": 9,
+    "pieces": [
+      {
+        "title": "Concerto in C Major, Hob. VIIb:1",
+        "composer": "J. Haydn",
+        "movements": ["I. Moderato", "II. Adagio", "III. Allegro molto"],
+        "index": "9.0001"
+      }
+    ]
+  },
+  {
+    "book": 10,
+    "pieces": [
+      {
+        "title": "Concerto in B-flat Major",
+        "composer": "L. Boccherini, arr. F. Grützmacher",
+        "movements": [
+          "I. Allegro moderato",
+          "II. Adagio non troppo",
+          "III. Rondo: Allegro"
+        ],
+        "index": "10.0001"
+      }
+    ]
+  }
+]
