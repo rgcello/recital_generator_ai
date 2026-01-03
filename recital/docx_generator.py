@@ -43,6 +43,16 @@ def generate_recital_docx(
     doc = Document()
 
     # ============================================================
+    # REDUCE MARGINS
+    # ============================================================
+    sections = doc.sections
+    for section in sections:
+        section.top_margin = Inches(0.5)
+        section.bottom_margin = Inches(0.5)
+        section.left_margin = Inches(1.0)
+        section.right_margin = Inches(1.0)
+
+    # ============================================================
     # HEADER (exactly as specified)
     # ============================================================
 
@@ -97,10 +107,10 @@ def generate_recital_docx(
         table.autofit = False
         table.allow_autofit = False
 
-        # Set column widths: 3/5 for title, 2/5 for composer (within margins)
-        # Using 6 inches total width to stay within margins
-        table.columns[0].width = Inches(3.6)  # 3/5 of 6 inches
-        table.columns[1].width = Inches(2.4)  # 2/5 of 6 inches
+        # Set column widths: 3/5 for title, 2/5 for composer
+        # Page width: 8.5" - left margin (1.0") - right margin (1.0") = 6.5"
+        table.columns[0].width = Inches(3.9)  # 3/5 of 6.5 inches
+        table.columns[1].width = Inches(2.6)  # 2/5 of 6.5 inches
 
         # Add each piece as a row
         for piece_idx, piece in enumerate(sorted_pieces):
@@ -109,7 +119,8 @@ def generate_recital_docx(
             # ====================================================
             left_cell = table.cell(piece_idx, 0)
             left_p = left_cell.paragraphs[0]
-            left_p.paragraph_format.space_after = Pt(0)  # Remove space after title
+            left_p.paragraph_format.space_after = Pt(6)  # Half-line spacing after title
+            left_p.paragraph_format.space_before = Pt(0)
 
             # Title (BOLD if present, blank if not)
             title_text = piece.title or ""
@@ -121,12 +132,9 @@ def generate_recital_docx(
                 for movement in piece.movements:
                     mp = left_cell.add_paragraph(movement)
                     mp.paragraph_format.left_indent = Inches(0.3)
-                    mp.paragraph_format.space_after = Pt(
-                        0
-                    )  # No whitespace between movements
-            else:
-                # IMPORTANT: preserve spacing even when no movements
-                left_cell.add_paragraph("")
+                    mp.paragraph_format.space_after = Pt(0)
+                    mp.paragraph_format.space_before = Pt(0)
+                    mp.paragraph_format.line_spacing = 1.0
 
             # ====================================================
             # Right Cell: Composer (right-aligned)
@@ -134,7 +142,8 @@ def generate_recital_docx(
             right_cell = table.cell(piece_idx, 1)
             right_p = right_cell.paragraphs[0]
             right_p.alignment = WD_ALIGN_PARAGRAPH.RIGHT
-            right_p.paragraph_format.space_after = Pt(0)  # Remove space after composer
+            right_p.paragraph_format.space_after = Pt(0)
+            right_p.paragraph_format.space_before = Pt(0)
 
             composer_text = piece.composer or ""
             right_p.add_run(composer_text)

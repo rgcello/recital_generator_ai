@@ -99,29 +99,44 @@ EXAMPLE:
 MOVEMENT PARSING & PRECEDENCE (CRITICAL)
 ----------------------------------------------------------------
 
-You MUST actively parse movement indicators from fuzzy text, including:
-
-• Ordinals: "1st movement", "first movement", "2nd", "third", etc.
-• Roman numerals: "I.", "II.", "III."
-• Tempo markings if unique within the work (e.g. "Allegro")
-• Phrases like "opening movement", "final movement"
+You MUST actively parse movement indicators from fuzzy text.
 
 MOVEMENT SELECTION RULES (ABSOLUTELY CRITICAL):
 
-1. If a specific movement IS mentioned → Include ONLY that ONE movement
-   • "Boccherini b flat concerto 1st movement" → movements: ["I. Allegro moderato"]
-   • "Haydn concerto second movement" → movements: ["II. Adagio"]
-   • Do NOT add other movements even if they exist in the repertoire
+1. SINGLE MOVEMENT INDICATORS → Include ONLY that ONE movement:
+   • "1st movement" / "first movement" → ["I. ..."]
+   • "2nd movement" / "second movement" → ["II. ..."]
+   • "3rd movement" / "third movement" → ["III. ..."]
+   • "opening movement" → ["I. ..."]
+   • "last movement" / "final movement" → [last movement only]
+   • Exact tempo match (e.g., "Allegro") → [matching movement only]
    
-2. If NO movement is mentioned → Include ALL movements from the repertoire
-   • "Boccherini b flat concerto" → movements: ["I. Allegro moderato", "II. Adagio non troppo", "III. Rondo: Allegro"]
+2. MULTIPLE MOVEMENT INDICATORS → Include ONLY those movements:
+   • "first two movements" / "movements 1 and 2" → ["I. ...", "II. ..."]
+   • "last two movements" → [second-to-last, last]
+   • "movements 1, 2, and 3" → ["I. ...", "II. ...", "III. ..."]
    
-3. VIOLATION EXAMPLES (FORBIDDEN):
-   ✗ User says "1st movement" but you return all 3 movements
-   ✗ User says "opening movement" but you return movements I, II, and III
-   ✗ User specifies one movement but you include extras "just in case"
+3. NO MOVEMENT SPECIFIED → Include ALL movements:
+   • "Boccherini concerto" (no movement mentioned) → [all movements]
+   • "Vivaldi sonata" (no movement mentioned) → [all movements]
+   
+4. AMBIGUOUS MOVEMENT → Include NO movements (empty array):
+   • If you cannot determine which specific movement(s) → []
+   • Better to omit than guess wrong
 
-When in doubt about which specific movement, return NO movements rather than all movements.
+CONCRETE EXAMPLES:
+✓ "Boccherini b flat concerto 1st movement" → ["I. Allegro moderato"]
+✓ "Haydn concerto second movement" → ["II. Adagio"]
+✓ "Vivaldi sonata first two movements" → ["I. Largo", "II. Allegro"]
+✓ "Boccherini concerto last movement" → ["III. Rondo: Allegro"]
+✓ "Marcello Sonata movements 1 and 2" → ["I. Adagio", "II. Allegro"]
+✓ "Boccherini concerto" (no movement) → ["I. Allegro moderato", "II. Adagio non troppo", "III. Rondo: Allegro"]
+
+VIOLATIONS (FORBIDDEN):
+✗ User says "1st movement" but you return all 3 movements
+✗ User says "first two movements" but you return all movements
+✗ User says "last movement" but you return movements I, II, and III
+✗ User specifies movements but you include extras or different ones
 
 ----------------------------------------------------------------
 CONFIDENCE LEVELS (REQUIRED)

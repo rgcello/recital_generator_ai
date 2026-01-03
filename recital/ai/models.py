@@ -19,9 +19,12 @@ class ResolvedPiece(BaseModel):
         default_factory=list,
         description=(
             "Exact canonical movement strings from repertoire. "
-            "CRITICAL: If user specifies a single movement (e.g., '1st movement'), "
-            "include ONLY that one movement. If no movement specified, include all. "
-            "Never include extra movements beyond what was specified."
+            "CRITICAL RULES: "
+            "(1) Single movement indicator ('1st', 'first', 'second', 'last') → ONE movement only. "
+            "(2) Multiple movements ('first two', 'movements 1 and 2') → ONLY those movements. "
+            "(3) No movement mentioned → ALL movements. "
+            "(4) Ambiguous → EMPTY array. "
+            "Never add extra movements. Never guess if unclear."
         ),
     )
     library_index: Optional[str] = Field(
