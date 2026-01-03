@@ -10,8 +10,40 @@ A Python application for generating formatted recital programs from CSV student 
 - Supports multiple pieces per student
 - Automatic sorting by repertoire difficulty
 - Handles movement specifications
+- Modern GUI interface with file pickers
+- Secure API key storage (per-user configuration)
 
-## Setup
+## Quick Start
+
+### Automatic Setup (Recommended)
+
+**Linux/macOS:**
+
+```bash
+./run.sh
+```
+
+**macOS (double-click):**
+
+```bash
+chmod +x run.command
+# Then double-click run.command in Finder
+```
+
+**Windows:**
+
+```
+Double-click run.bat
+```
+
+The launcher scripts will automatically:
+
+- Create a virtual environment if needed
+- Install all dependencies
+- Check for tkinter
+- Launch the application
+
+### Manual Setup
 
 1. **Create a virtual environment:**
 
@@ -23,30 +55,40 @@ A Python application for generating formatted recital programs from CSV student 
 2. **Install dependencies:**
 
    ```bash
-   pip install openai python-dotenv python-docx pydantic
+   pip install openai python-docx pydantic
    ```
 
-3. **Configure environment variables:**
-   Create a `.env` file in the root directory:
-   ```
-   OPENAI_API_KEY=your-api-key-here
-   ```
+3. **Install tkinter (if not already installed):**
 
-## Usage
+   - **Linux:** `sudo apt-get install python3-tk`
+   - **macOS:** Included with Python
+   - **Windows:** Included with Python
 
-1. Place CSV files in `recital/csv_inbox/` directory
-
-   - Format: `student,description` (no headers)
-   - Example: `John Doe,Twinkle Variations`
-
-2. Run the generator:
+4. **Run the application:**
 
    ```bash
    cd recital
    python3 generate_recital.py
    ```
 
-3. Follow the prompts to enter recital details for each CSV file
+## Usage
+
+1. **First time setup:**
+
+   - Enter your OpenAI API key when prompted
+   - The key is saved securely in `~/.recital_generator/config.json`
+
+2. **Using the GUI:**
+
+   - Enter recital header information (title, subtitle, date, location)
+   - Click "Select CSV File" to choose your student data file
+   - Click "Select Output Folder" for where to save the program
+   - Click "Generate Recital Program"
+
+3. **CSV File Format:**
+
+   - Format: `student,description` (no headers)
+   - Example: `John Doe,Twinkle Variations`
 
 4. Generated DOCX files will be saved in `recital/output/`
 

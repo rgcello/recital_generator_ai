@@ -88,30 +88,30 @@ def prompt_for_api_key(parent=None, show_password=True):
     # Entry field with show/hide toggle
     entry_frame = tk.Frame(frame)
     entry_frame.pack(pady=(0, 15))
-    
+
     entry = tk.Entry(
-        entry_frame, 
-        textvariable=api_key_var, 
-        width=70, 
-        show="*" if show_password else "", 
-        font=("Segoe UI", 12)
+        entry_frame,
+        textvariable=api_key_var,
+        width=70,
+        show="*" if show_password else "",
+        font=("Segoe UI", 12),
     )
     entry.pack(side="left", ipady=8, padx=(0, 10))
-    
+
     def toggle_visibility():
         if show_key.get():
             entry.config(show="")
         else:
             entry.config(show="*")
-    
+
     tk.Checkbutton(
         entry_frame,
         text="Show",
         variable=show_key,
         command=toggle_visibility,
-        font=("Segoe UI", 10)
+        font=("Segoe UI", 10),
     ).pack(side="left")
-    
+
     entry.focus()
 
     def on_save():
@@ -179,12 +179,12 @@ def main():
     openai.api_key = api_key
 
     # Load Suzuki repertoire JSON
-    # Get the directory where the script is located
-    script_dir = Path(__file__).parent
-    repertoire_path = script_dir / "repertoire" / "suzuki_repertoire.json"
+    repertoire_path = Path(__file__).parent / "repertoire" / "suzuki_repertoire.json"
 
     if not repertoire_path.exists():
-        messagebox.showerror("Error", "suzuki_repertoire.json not found")
+        messagebox.showerror(
+            "Error", f"suzuki_repertoire.json not found at {repertoire_path}"
+        )
         sys.exit(1)
 
     with open(repertoire_path, "r", encoding="utf-8") as f:
@@ -294,7 +294,7 @@ def main():
             save_api_key(new_key)
             openai.api_key = new_key
             messagebox.showinfo("Success", "API key updated successfully!")
-    
+
     def view_api_key():
         """Show the current API key."""
         current_key = load_api_key()
@@ -304,47 +304,74 @@ def main():
             view_dialog.title("View API Key")
             view_dialog.geometry("700x250")
             view_dialog.resizable(False, False)
-            
+
             # Center the dialog
             x = (root.winfo_screenwidth() - 700) // 2
             y = (root.winfo_screenheight() - 250) // 2
             view_dialog.geometry(f"700x250+{x}+{y}")
-            
+
             frame = tk.Frame(view_dialog, padx=30, pady=25)
             frame.pack(fill="both", expand=True)
-            
-            tk.Label(frame, text="Your Current API Key:", font=("Segoe UI", 12, "bold")).pack(pady=(0, 15))
-            
-            key_text = tk.Text(frame, height=3, width=75, font=("Segoe UI", 10), wrap="word")
+
+            tk.Label(
+                frame, text="Your Current API Key:", font=("Segoe UI", 12, "bold")
+            ).pack(pady=(0, 15))
+
+            key_text = tk.Text(
+                frame, height=3, width=75, font=("Segoe UI", 10), wrap="word"
+            )
             key_text.pack(pady=(0, 15))
             key_text.insert("1.0", current_key)
             key_text.config(state="disabled")
-            
+
             def copy_to_clipboard():
                 root.clipboard_clear()
                 root.clipboard_append(current_key)
-                messagebox.showinfo("Copied", "API key copied to clipboard!", parent=view_dialog)
-            
+                messagebox.showinfo(
+                    "Copied", "API key copied to clipboard!", parent=view_dialog
+                )
+
             btn_frame = tk.Frame(frame)
             btn_frame.pack()
-            
-            tk.Button(btn_frame, text="Copy to Clipboard", command=copy_to_clipboard,
-                     bg="#6366f1", fg="white", font=("Segoe UI", 10, "bold"),
-                     padx=20, pady=8, borderwidth=0).pack(side="left", padx=5)
-            
-            tk.Button(btn_frame, text="Close", command=view_dialog.destroy,
-                     bg="#6b7280", fg="white", font=("Segoe UI", 10),
-                     padx=20, pady=8, borderwidth=0).pack(side="left", padx=5)
+
+            tk.Button(
+                btn_frame,
+                text="Copy to Clipboard",
+                command=copy_to_clipboard,
+                bg="#6366f1",
+                fg="white",
+                font=("Segoe UI", 10, "bold"),
+                padx=20,
+                pady=8,
+                borderwidth=0,
+            ).pack(side="left", padx=5)
+
+            tk.Button(
+                btn_frame,
+                text="Close",
+                command=view_dialog.destroy,
+                bg="#6b7280",
+                fg="white",
+                font=("Segoe UI", 10),
+                padx=20,
+                pady=8,
+                borderwidth=0,
+            ).pack(side="left", padx=5)
         else:
             messagebox.showinfo("No API Key", "No API key is currently saved.")
-    
+
     def delete_api_key_confirm():
         """Delete the API key after confirmation."""
-        if messagebox.askyesno("Confirm Delete", 
-                              "Are you sure you want to delete your saved API key?\n\nYou will need to enter it again the next time you run the application.",
-                              icon='warning'):
+        if messagebox.askyesno(
+            "Confirm Delete",
+            "Are you sure you want to delete your saved API key?\n\nYou will need to enter it again the next time you run the application.",
+            icon="warning",
+        ):
             if delete_api_key():
-                messagebox.showinfo("Deleted", "API key has been deleted successfully.\n\nThe application will now close.")
+                messagebox.showinfo(
+                    "Deleted",
+                    "API key has been deleted successfully.\n\nThe application will now close.",
+                )
                 root.quit()
             else:
                 messagebox.showinfo("Not Found", "No API key was found to delete.")
