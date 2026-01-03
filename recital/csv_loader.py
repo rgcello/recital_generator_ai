@@ -91,13 +91,19 @@ def _load_single_csv(csv_path: Path) -> Optional[List[Dict[str, str]]]:
 
                 student, description = row
 
-                # Validate both fields are non-empty
-                if not student.strip() or not description.strip():
-                    print(f"Skipping '{csv_path.name}': Row {row_num} has empty fields")
+                # Validate student name is non-empty
+                if not student.strip():
+                    print(
+                        f"Skipping '{csv_path.name}': Row {row_num} has empty student name"
+                    )
                     return None
 
+                # Allow empty descriptions - they'll be handled as unmatched pieces
                 entries.append(
-                    {"student": student.strip(), "description": description.strip()}
+                    {
+                        "student": student.strip(),
+                        "description": description.strip() or " ",
+                    }
                 )
 
             if entries:
