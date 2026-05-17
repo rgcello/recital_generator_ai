@@ -377,47 +377,29 @@ def main():
                 messagebox.showinfo("Not Found", "No API key was found to delete.")
 
     def select_csv():
-        # Create a fixed-size toplevel window for the dialog
-        dialog_root = tk.Toplevel(root)
-        dialog_root.geometry("900x600")
-        dialog_root.title("Select CSV File")
-        dialog_root.withdraw()
-
-        # Hide main window temporarily
-        root.withdraw()
+        # Ensure main window is updated and visible
+        root.update_idletasks()
 
         filename = filedialog.askopenfilename(
-            parent=dialog_root,
+            parent=root,
             title="Select CSV File",
             filetypes=[("CSV files", "*.csv"), ("All files", "*.*")],
             initialdir=os.path.expanduser("~"),
         )
 
-        dialog_root.destroy()
-        root.deiconify()
-
         if filename:
             csv_file.set(filename)
 
     def select_output_folder():
-        # Create a fixed-size toplevel window for the dialog
-        dialog_root = tk.Toplevel(root)
-        dialog_root.geometry("900x600")
-        dialog_root.title("Select Output Folder")
-        dialog_root.withdraw()
-
-        # Hide main window temporarily
-        root.withdraw()
+        # Ensure main window is updated and visible
+        root.update_idletasks()
 
         folder = filedialog.askdirectory(
-            parent=dialog_root,
+            parent=root,
             title="Select Output Folder",
             initialdir=os.path.expanduser("~"),
             mustexist=True,
         )
-
-        dialog_root.destroy()
-        root.deiconify()
 
         if folder:
             output_folder.set(folder)

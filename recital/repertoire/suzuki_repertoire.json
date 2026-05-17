@@ -443,5 +443,39 @@
         "index": "10.0001"
       }
     ]
+  },
+  {
+    "book": 11,
+    "pieces": [
+      {
+        "title": "Cello Concerto No. 1 in A minor, Op. 33",
+        "composer": "C. Saint-Saëns",
+        "movements": [
+          "I. Allegro non troppo",
+          "II. Allegretto con moto",
+          "III. Tempo primo"
+        ],
+        "index": "11.0005"
+      },
+      {
+        "title": "Cello Sonata No. 1, Op. 38",
+        "composer": "J. Brahms",
+        "movements": [
+          "I. Allegro non troppo",
+          "II. Allegretto quasi Menuetto",
+          "III. Allegro"
+        ],
+        "index": "11.0001"
+      },
+      {
+        "title": "Cello Concerto No. 2",
+        "composer": "C. Saint-Saëns",
+        "movements": [
+          "I. Allegro moderato e maestoso – Andante sostenuto",
+          "II. Allegro non troppo – Cadenza – Molto allegro"
+        ],
+        "index": "11.0005"
+      }
+    ]
   }
 ]
